@@ -31,17 +31,8 @@ _.forIn(routers,function(val,key){
 })
 
 
-if (config.isProduction) {
-    //console.log('run in prod mode')
-    app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: {}
-        });
-    });
-}else{
-    //console.log('run in dev mode')
+if (config.isErrToPage) {
+    //console.log('run in non-prod mode')
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
         console.log(err)
@@ -50,30 +41,21 @@ if (config.isProduction) {
             error: JSON.stringify(err.stack)
         });
     });
+}else{
+    //console.log('run in prod mode')
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: Date()+":服务器发生错误",
+            error: {}
+        });
+    });
 }
 
 
 module.exports= app
 
 
-process.on('uncaughtException', function (err) {
-    console.log(err);
-
-    try {
-        var killTimer = setTimeout(function () {
-            process.exit(1);
-        }, 30000);
-        killTimer.unref();
-
-        server.close();
-
-        if (cluster.worker) {
-            cluster.worker.disconnect();
-        }
-    } catch (e) {
-        console.log('error when exit', e.stack);
-    }
-});
 
 //var httpProxy = require('http-proxy');
 //

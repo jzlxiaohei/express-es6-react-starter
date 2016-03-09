@@ -3,7 +3,10 @@
   
 #back-end
 ##dev
-  开发的时候使用,babel-node,命令npm run dev(first ,you should install nodemon in global env :npm i nodemon -g)
+  首先
+    npm i -g gulp nodemon babel-cli
+
+  开发的时候使用,babel-node,命令npm run dev
 
 ##deploy  
     发布: make deploy(查看makefile里命令)
