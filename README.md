@@ -4,7 +4,10 @@
 #back-end
 ##dev
   首先
-    npm i -g gulp nodemon babel-cli
+     
+     npm i -g gulp nodemon babel-cli
+
+  复制 config.local.demo.js 到 config.local.js
 
   开发的时候使用,babel-node,命令npm run dev
 
