@@ -3,12 +3,13 @@
   "extends": "airbnb",
   "rules": {
     "comma-dangle": [
-      2,
+      1,
       "never"
     ],
-    "new-cap":1,
-    "indent":[2,4],
-    "semi":0,
-    "prefer-template":1
+    "spaced-comment": [
+      0,
+      "always"
+    ],
+    "intent":2
   }
 }

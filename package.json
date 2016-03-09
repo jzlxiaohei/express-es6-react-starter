@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint public/src",
+    "lint-src": "eslint src",
+    "lint-public":"cd src &&  eslint public/src && cd ..",
+    "lint":"npm run lint",
     "dev": "nodemon --ignore src/public/ --ignore src/views/ --ignore src/components/ ./bin/www",
     "start": "NODE_ENV=production  node ./bin/www"
   },
@@ -46,6 +48,7 @@
     "eslint": "^2.3.0",
     "eslint-config-airbnb": "^6.1.0",
     "eslint-plugin-react": "^4.2.0",
+    "estraverse-fb": "^1.3.1",
     "extract-text-webpack-plugin": "^0.9.1",
     "file-loader": "^0.8.5",
     "gulp": "^3.9.1",

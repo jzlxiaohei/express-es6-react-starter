@@ -1,23 +1,23 @@
-var Promise = require('bluebird')
-var router = require('express').Router();
-var path = require('path')
+const Promise = require('bluebird')
+const router = require('express').Router()
+const path = require('path')
 
-var fs = require('fs')
-var readFile = Promise.promisify(fs.readFile);
+const fs = require('fs')
+const readFile = Promise.promisify(fs.readFile)
 
-router.get('/',$asyncWrapper(async function(req,res){
+/* global $asyncWrapper, $reactViewEngine */
+router.get('/', $asyncWrapper(async function (req, res) {
+    const reactMarkUp = $reactViewEngine.renderToStaticMarkup('index')
 
-    var reactMarkUp = $reactViewEngine.renderToStaticMarkup("index")
+    const text = await readFile(path.join(__dirname, './foo.txt'), 'utf-8');
 
-    var text = await readFile(path.join(__dirname,"./foo.txt"), "utf-8");
-
-    res.render('index',{
-        title:text,
-        react:reactMarkUp
+    res.render('index', {
+        title: text,
+        react: reactMarkUp
     })
 }))
 
 module.exports = {
-    router:router,
-    ns:""
+    router,
+    ns: ''
 }

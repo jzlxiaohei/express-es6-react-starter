@@ -22,7 +22,7 @@ var copyPaths = paths.es6.map(function(item){
 }).concat(['src/**/*'])
 
 
-gulp.task('babel-src', function(){
+gulp.task('babel-src', function() {
     return gulp.src(paths.es6,{base:'src'})
         .pipe(sourceMaps.init())
         .pipe(babel({
