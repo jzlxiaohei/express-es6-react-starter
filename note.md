@@ -1,1 +1,0 @@
-"dev": "nodemon --ignore src/public/ --ignore src/views/ --ignore src/components/ ./bin/www",
