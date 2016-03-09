@@ -3,7 +3,11 @@
 /**
  * Module dependencies.
  */
+require("babel-polyfill")
 var config  = require('../config')
+if(!config.isProduction){
+    require("babel-register");
+}
 
 var app = config.isProduction ? require('../build/app') : require('../src/app');
 var http = require('http');
@@ -89,18 +93,3 @@ function onListening() {
     console.log('Listening on ' + bind);
 }
 
-process.on('uncaughtException', function (err) {
-    console.log(err);
-
-    try {
-        var killTimer = setTimeout(function () {
-            process.exit(1);
-        }, 30000);
-        killTimer.unref();
-
-        server.close();
-
-    } catch (e) {
-        console.log('error when exit', e.stack);
-    }
-});
