@@ -1,10 +1,4 @@
 var config = require('../config')
-
-if(!config.isProduction){
-    require("babel-register");
-    require("babel-polyfill")
-}
-
 var path = require('path')
 var express = require('express')
 var app = express()

@@ -4,6 +4,10 @@
  * Module dependencies.
  */
 var config  = require('../config')
+if(!config.isProduction){
+    require("babel-register");
+    require("babel-polyfill")
+}
 var app = config.isProduction ? require('../build/app') : require('../src/app');
 var http = require('http');
 
