@@ -4,7 +4,7 @@ list:
 
 
 deploy:
-    gulp babel
+    gulp build
 	git pull
 	pm2 startOrReload pm2.json
 	pm2 list
