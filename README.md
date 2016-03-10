@@ -14,6 +14,15 @@
 ##deploy  
     发布: make deploy(查看makefile里命令)
 
+    npm i -g pm2
+    //log rotate 标准: 10M,一天
+    pm2 install pm2 install pm2-logrotate
+    pm2 set pm2-logrotate:max_size 10M
+    pm2 set pm2-logrotate:interval 1
+    pm2 web (port :9615)
+    
+    //use pm2 to log,just console.log,console.error
+
 ##feature  
   支持async/await以及各种es6,7的语法
     
@@ -23,6 +32,8 @@
     
         xx/yy/zzController.js => 路由 /xx/yy/zz
         
+
 ##roadmap
   swagger-support      
+    
 

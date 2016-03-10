@@ -32,7 +32,6 @@ _.forIn(routers,function(val,key){
 
 
 if (config.isErrToPage) {
-    //console.log('run in non-prod mode')
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
         console.log(err)
@@ -42,11 +41,10 @@ if (config.isErrToPage) {
         });
     });
 }else{
-    //console.log('run in prod mode')
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
         res.render('error', {
-            message: Date()+":服务器发生错误",
+            message: Date()+":发生错误",
             error: {}
         });
     });

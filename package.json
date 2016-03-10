@@ -1,13 +1,13 @@
 {
-  "name": "react-antd",
+  "name": "express-react-antd-start",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint-src": "eslint src",
-    "lint-public":"cd src &&  eslint public/src && cd ..",
-    "lint":"npm run lint",
+    "lint-public": "cd src &&  eslint public/src && cd ..",
+    "lint": "npm run lint",
     "dev": "nodemon --ignore src/public/ --ignore src/views/ --ignore src/components/ ./bin/www",
     "start": "NODE_ENV=production  node ./bin/www"
   },
@@ -16,7 +16,6 @@
     "antd": "^0.11.2",
     "bluebird": "^3.3.4",
     "body-parser": "^1.15.0",
-    "bunyan": "^1.7.1",
     "cookie-parser": "^1.4.1",
     "debug": "^2.2.0",
     "express": "^4.13.4",
@@ -24,6 +23,7 @@
     "jade": "^1.11.0",
     "jquery": "^2.2.1",
     "lodash": "^4.6.1",
+    "moment": "^2.12.0",
     "react": "^0.14.4",
     "react-dom": "^0.14.5",
     "react-router": "^2.0.0",
