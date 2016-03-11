@@ -1,11 +1,9 @@
 #!/usr/bin/env node
 
-/**
- * Module dependencies.
- */
 require("babel-polyfill")
-var config  = require('../config')
-if(!config.isProduction){
+
+var config = require('../config')
+if (!config.isProduction) {
     require("babel-register");
 }
 
@@ -92,4 +90,3 @@ function onListening() {
         : 'port ' + addr.port;
     console.log('Listening on ' + bind);
 }
-

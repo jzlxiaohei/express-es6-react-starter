@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var _ = require("lodash")
 
-
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'jade')
 
@@ -20,7 +19,7 @@ app.use(bodyParser.urlencoded({
     extended:true
 }));
 
-
+//init global variables
 require("./global-var")
 
 //initRouter
@@ -52,7 +51,7 @@ if (config.isErrToPage) {
 
 module.exports= app
 
-
+//use to proxy api(java)
 
 //var httpProxy = require('http-proxy');
 //
