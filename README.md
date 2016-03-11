@@ -2,7 +2,7 @@
   [ant.design starter](https://github.com/jzlxiaohei/react-antd-starter)
   
     cd src/public
-    node devServer.js //http://localhost:9527,just dev frontend!!!
+    node devServer.js // localhost:9527,just dev frontend!!!
   
 #back-end
 ##dev
@@ -12,7 +12,7 @@
 
   复制 config.local.demo.js 到 config.local.js
 
-  开发的时候使用,babel-node,命令npm run dev
+  开发的时候使用命令 npm run dev
 
 ##deploy  
     发布: make deploy(查看makefile里命令)
