@@ -21,16 +21,23 @@
     pm2 set pm2-logrotate:interval 1
     pm2 web (port :9615)
     
-    //use pm2 to log,just console.log,console.error
+log使用pm2管理, 直接使用 `console.log`,`console.error`即可
 
 ##feature  
   支持async/await以及各种es6,7的语法
     
   jade + react-server-render
   
-  controllers: 必须为xxController.js的格式,返回express.Router(),如果没有ns自动,自动根据 路径和命名
+  controllers: 必须为xxController.js的格式,返回
     
-        xx/yy/zzController.js => 路由 /xx/yy/zz
+    {
+        router:express.Router(),//required
+        ns:''//可选
+    }
+    
+  如果没有`ns`,则自动根据 路径和命名
+    
+    xx/yy/zzController.js => 路由 /xx/yy/zz
         
 
 ##roadmap

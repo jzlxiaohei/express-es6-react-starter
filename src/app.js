@@ -32,16 +32,16 @@ _.forIn(routers,function(val,key){
 
 
 if (config.isErrToPage) {
-    app.use(function(err, req, res, next) {
+    app.use(function(err, req, res) {
         res.status(err.status || 500);
         console.log(err)
         res.render('error', {
             message: err.message,
-            error: JSON.stringify(err.stack)
+            error: JSON.stringify(err.stack).replace(/\\n/g,'<br>')
         });
     });
 }else{
-    app.use(function(err, req, res, next) {
+    app.use(function(err, req, res) {
         res.status(err.status || 500);
         res.render('error', {
             message: Date()+":发生错误",

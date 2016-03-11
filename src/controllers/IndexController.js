@@ -12,7 +12,6 @@ router.get('/', $asyncWrapper(async function (req, res) {
 
     const text = await readFile(path.join(__dirname, './foo.txt'), 'utf-8');
 
-    console.error("error")
     res.render('index', {
         title: text,
         react: reactMarkUp
