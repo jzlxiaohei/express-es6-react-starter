@@ -1,6 +1,9 @@
 #front-end:
   [ant.design starter](https://github.com/jzlxiaohei/react-antd-starter)
   
+    cd src/public
+    node devServer.js //http://localhost:9527,just dev frontend!!!
+  
 #back-end
 ##dev
   首先
