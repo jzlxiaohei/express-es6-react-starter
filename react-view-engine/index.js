@@ -1,13 +1,14 @@
 var path = require('path')
-
 var React = require('react')
 var ReactDOMServer = require("react-dom/server")
+
 function ReactViewEngine(views, opt) {
     this.views = views
     opt = opt || {}
     this.isProduction = opt.isProduction || process.env.NODE_ENV === "production"
     this.moduleDetectRegEx = new RegExp('^' + views);
 }
+
 ReactViewEngine.prototype.renderToStaticMarkup = function (filePath, options) {
     var moduleDetectRegEx = this.moduleDetectRegEx
     var isProduction = this.isProduction
