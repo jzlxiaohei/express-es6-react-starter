@@ -15,6 +15,12 @@ module.exports = {
         filename: '[name].js?v=[hash]',
         publicPath: '/dist/'
     },
+    externals:{
+        jquery:"jquery",
+        "react-dom":"ReactDOM",
+        react:"React",
+        "rx-lite":"Rx"
+    },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
@@ -37,11 +43,5 @@ module.exports = {
             },
             {test: /\.(png|jpg|gif)$/, loader: 'url-loader'}
         ]
-    },
-    externals:{
-        jquery:"jquery",
-        "react-dom":"ReactDOM",
-        react:"React"
-        //"rx-lite":"Rx"
     }
 };

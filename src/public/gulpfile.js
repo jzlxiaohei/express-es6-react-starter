@@ -7,20 +7,20 @@ var gp_concat = require('gulp-concat')
 var webpack = require("webpack")
 
 var holderKeys = {
-    '[node_modules_path]': path.join(__dirname,'../node_modules')
+    '[node_modules_path]': path.join(__dirname,'../../node_modules')
 }
 var libPath=[
     '[node_modules_path]/jquery/dist/jquery.min.js',
     '[node_modules_path]/react/dist/react.min.js',
-    '[node_modules_path]/react-dom/dist/react-dom.min.js'
-    //'[node_modules_path]/rx-lite/rx.lite.min.js'
+    '[node_modules_path]/react-dom/dist/react-dom.min.js',
+    '[node_modules_path]/rx-lite/rx.lite.min.js'
 ]
 
 var libDevPath=[
     '[node_modules_path]/jquery/dist/jquery.js',
     '[node_modules_path]/react/dist/react.js',
-    '[node_modules_path]/react-dom/dist/react-dom.js'
-    //'[node_modules_path]/rx-lite/rx.lite.js'
+    '[node_modules_path]/react-dom/dist/react-dom.js',
+    '[node_modules_path]/rx-lite/rx.lite.js'
 ]
 
 libPath = replaceHolder(holderKeys,libPath)

@@ -27,8 +27,7 @@ app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-var config = require('../config')
-var fePort = config.fePort
+var fePort = 9527
 app.listen(fePort, function(err) {
     if (err) {
         console.log(err);
