@@ -43,7 +43,7 @@ if (config.isErrToPage) {
     app.use(function(err, req, res) {
         res.status(err.status || 500);
         res.render('error', {
-            message: Date()+":发生错误",
+            message:new Date()+":发生错误",
             error: {}
         });
     });
