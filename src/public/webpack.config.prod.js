@@ -4,24 +4,27 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var autoprefixer = require('autoprefixer');
 var precss       = require('precss');
 var AssetsPlugin         = require('assets-webpack-plugin');
-var assetsPluginInstance = new AssetsPlugin({})
-
+var assetsPluginInstance = new AssetsPlugin({
+    pretty:true,
+    path:path.join(__dirname,'../')
+})
 
 module.exports = {
     devtool: 'source-map',
-    entry: [
-        './src/index'
-    ],
+    entry: {
+        main:['./src/index']
+    },
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: 'main.js',
         publicPath: '/dist/'
     },
     externals:{
-        jquery:"jquery",
+        'jquery':"jquery",
         "react-dom":"ReactDOM",
-        react:"React",
-        "rx-lite":"Rx"
+        'react':"React",
+        'rx-lite':"Rx",
+        'antd':"antd"
     },
     plugins: [
         new ExtractTextPlugin("[name].css?v=[chunkhash]"),

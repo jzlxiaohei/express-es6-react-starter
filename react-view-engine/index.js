@@ -5,7 +5,7 @@ var ReactDOMServer = require("react-dom/server")
 function ReactViewEngine(views, opt) {
     this.views = views
     opt = opt || {}
-    this.isProduction = opt.isProduction || process.env.NODE_ENV === "production"
+    this.isProduction = opt.isProduction === (undefined ? process.env.NODE_ENV === "production" : opt.isProduction)
     this.moduleDetectRegEx = new RegExp('^' + views);
 }
 

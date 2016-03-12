@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 //init global variables
-require("./global-var")
+require("./global-var")()
 
 //initRouter
 var routers = require("./controllers")

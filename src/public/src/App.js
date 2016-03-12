@@ -44,7 +44,6 @@ const App = React.createClass({
             <div style={{width: 400, margin: "0 auto 100px"}}>
                 <DatePicker onChange={this.handleChange} />
                 <div style={{marginTop: 20}}>当前日期：{this.state.date.toString()}</div>
-                <div>111</div>
                 <Table dataSource={dataSource} columns={columns} />
                 <Link to={{pathname:'app2',query:{}}}>test</Link>
             </div>

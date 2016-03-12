@@ -6,7 +6,6 @@ const fs = require('fs')
 const readFile = Promise.promisify(fs.readFile)
 
 /* global $asyncWrapper, $reactViewEngine */
-
 router.get('/', $asyncWrapper(async function (req, res) {
     const reactMarkUp = $reactViewEngine.renderToStaticMarkup('index')
 

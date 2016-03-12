@@ -16,10 +16,11 @@ module.exports = {
         publicPath: '/dist/'
     },
     externals:{
-        jquery:"jquery",
+        'jquery':"jquery",
         "react-dom":"ReactDOM",
-        react:"React",
-        "rx-lite":"Rx"
+        'react':"React",
+        'rx-lite':"Rx",
+        'antd':"antd"
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
