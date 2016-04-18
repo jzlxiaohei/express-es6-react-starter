@@ -16,40 +16,41 @@ if (config.isProduction) {
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-    extended:true
+    extended: true
 }));
 
 //init global variables
-require("./global-var")()
+require("./global-var")(app)
 
 //initRouter
 var routers = require("./controllers")
-_.forIn(routers,function(val,key){
+_.forIn(routers, function (val, key) {
     //val is router ,key is namespace
-    app.use(key,val)
+    app.use(key, val)
 })
 
 
 if (config.isErrToPage) {
-    app.use(function(err, req, res) {
+    app.use(function (err, req, res, next) {
         res.status(err.status || 500);
         console.log(err)
         res.render('error', {
             message: err.message,
-            error: JSON.stringify(err.stack).replace(/\\n/g,'<br>')
+            error: JSON.stringify(err.stack).replace(/\\n/g, '<br>')
         });
     });
-}else{
-    app.use(function(err, req, res) {
+} else {
+    app.use(function (err, req, res, next) {
         res.status(err.status || 500);
         res.render('error', {
-            message:new Date()+":发生错误",
+            message: new Date() + ":发生错误",
             error: {}
         });
     });
 }
 
-module.exports= app
+module.exports = app
+
 
 //use to proxy api(java)
 

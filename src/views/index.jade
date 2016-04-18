@@ -1,5 +1,9 @@
 extends layouts/default
 
+block headJs
+    script(src = $vh.getStatic('/assets/index.js'))
+
 
 block content
     #root !{react}
+

@@ -3,7 +3,7 @@ const fs = require('fs')
 class ViewHelper {
     constructor(options) {
         this.assetsMapPath = options.assetsMapPath
-        this.isProduction = options.isProduction === (undefined ? process.env.NODE_ENV === "production" : options.isProduction)
+        this.isProduction = options.isProduction === undefined ? process.env.NODE_ENV === "production" : options.isProduction
         this.prefix = options.prefix || ''
         this.devPath = options.devPath || ''
         this.init()

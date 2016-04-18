@@ -27,7 +27,8 @@ function generateLogJson(msg, option) {
         t: moment().format('YYYYY-MM-DD hh:mm:ss'),
         m: msg,
         pid: pid,
-        hn: hostname
+        hn: hostname,
+        file:__filename
     }
     _.extend(json, option)
 

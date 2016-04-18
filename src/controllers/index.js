@@ -1,5 +1,7 @@
 const path = require('path')
 const glob = require('glob')
+const router = require('express').Router()
+
 
 function lowerFirstLetter(str) {
     return str.charAt(0).toLowerCase() + str.slice(1);

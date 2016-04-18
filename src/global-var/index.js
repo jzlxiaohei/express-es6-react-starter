@@ -9,7 +9,7 @@ const assetsPath = path.join(__dirname, '../webpack-assets.json')
 module .exports = function initGlobalVar(app) {
 
     global.$reactViewEngine = new ReactEngine(
-        path.join(__dirname, "./components"),
+        path.join(__dirname, "../components"),
         {isProduction: config.isProduction}
     )
 

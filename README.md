@@ -1,6 +1,10 @@
 #front-end:
   [ant.design starter](https://github.com/jzlxiaohei/react-antd-starter)
   
+  使用打包好的ant.design（antd.js,antd.css）
+  增加了`assets-webpack-plugin`生成静态文件map,通过view-helper管理静态文件
+  
+  
     cd src/public
     node devServer.js // localhost:9527,just dev frontend!!!
   
